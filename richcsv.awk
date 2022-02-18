@@ -1,19 +1,14 @@
 BEGIN{
     FPAT="([^,]+)|(\"[^\"]+\")"
-    line = ""
 }
 
 {
-    if( line != "" ){
-        line = line RS $0
-    } else {
-        line = $0
-    }
-    if (split(line,tmp,"\"") % 2 == 0 ){
+    last = last $0
+    if (split(last,trash,"\"") % 2 == 0 ){
+        last = last RS
         next
     }
-    $0 = line
-    line = ""
+    $0 = last ; last = ""
 }
 
 # test
