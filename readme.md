@@ -1,7 +1,8 @@
 richcsv.awk
 ===========
 
-Pure AWK Template for reading CSV files containing line breaks in elements
+Pure gawk Template for reading CSV files containing line breaks in elements.
+(Test on gawk 5.1.1)
 
 ```awk
 BEGIN{
