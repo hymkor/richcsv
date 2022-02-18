@@ -4,7 +4,7 @@ BEGIN{
 
 {
     last = last $0
-    if (split(last,trash,"\"") % 2 == 0 ){
+    if ( last != "" && split(last,trash,"\"") % 2 == 0 ){
         last = last RS
         next
     }
