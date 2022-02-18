@@ -14,7 +14,7 @@ BEGIN{
 # test
 {
     for(i = 1 ; i <= NF ; i++ ){
-        printf "<%s>",$i
+        printf "<%s>",gensub("\"","","g",$i)
     }
     print ""
 }

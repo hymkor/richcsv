@@ -21,7 +21,7 @@ BEGIN{
 # test
 {
     for(i = 1 ; i <= NF ; i++ ){
-        printf "<%s>",$i
+        printf "<%s>",gensub("\"","","g",$i)
     }
     print ""
 }
@@ -36,9 +36,9 @@ $ type sample.csv
 4th"
 $ gawk -f richcsv.awk sample.csv
 <0001><=1+1><03><-4><5/2>
-<"hogeohg  2"><5555><3><"1st TEXT
+<hogeohg  2><5555><3><1st TEXT
 2nd
 3rd
-4th">
+4th>
 ```
 
